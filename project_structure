@@ -1,9 +1,26 @@
 screenshot_renamer/
 ├── README.md
+├── LICENSE
 ├── requirements.txt
+├── setup.py
+├── main.spec
 ├── src/
 │   ├── __init__.py
 │   ├── main.py
 │   ├── ocr_handler.py
 │   ├── ai_handler.py
-│   └── file_handler.py 
+│   ├── file_handler.py
+│   ├── config.py
+│   └── assets/
+│       ├── create_icon.py
+│       └── icon.ico
+├── tests/
+│   ├── __init__.py
+│   ├── create_test_images.py
+│   └── images/
+├── scripts/
+│   └── build.py
+└── .github/
+    ├── ISSUE_TEMPLATE/
+    │   └── bug_report.md
+    └── pull_request_template.md 
