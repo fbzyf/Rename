@@ -40,4 +40,17 @@ logs/
 config.json
 
 # Build files
-*.spec 
+*.spec
+
+# Cursor IDE files
+.cursorrules
+.cursor/
+.cursor.json
+
+# Temp files
+temp/
+tmp/
+
+# Release files
+release/*
+!release/.gitkeep 

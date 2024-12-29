@@ -5,7 +5,7 @@ from pathlib import Path
 
 def clean_build():
     """清理构建文件"""
-    dirs_to_clean = ['build', 'dist']
+    dirs_to_clean = ['build', 'dist', 'temp']
     files_to_clean = []
     
     for dir_name in dirs_to_clean:
@@ -28,9 +28,9 @@ def build():
     shutil.copy('README.md', 'build/resources/')
     
     # 使用 PyInstaller 打包
-    os.system('pyinstaller main.spec --clean --workpath build/temp --distpath dist')
+    os.system('pyinstaller main.spec --clean --workpath build/temp --distpath release')
     
-    print("构建完成！可执行文件位于 dist 目录")
+    print("构建完成！可执行文件位于 release 目录")
 
 if __name__ == '__main__':
     build() 

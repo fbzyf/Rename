@@ -3,7 +3,6 @@ screenshot_renamer/
 ├── LICENSE
 ├── requirements.txt
 ├── setup.py
-├── main.spec
 ├── src/
 │   ├── __init__.py
 │   ├── main.py
@@ -20,6 +19,8 @@ screenshot_renamer/
 │   └── images/
 ├── scripts/
 │   └── build.py
+├── release/
+│   └── ScreenshotRenamer.exe
 └── .github/
     ├── ISSUE_TEMPLATE/
     │   └── bug_report.md
