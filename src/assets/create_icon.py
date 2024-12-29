@@ -1,38 +1,17 @@
 from PIL import Image, ImageDraw
+import os
 
-# 创建一个 256x256 的图像
-size = 256
-img = Image.new('RGBA', (size, size), (0, 0, 0, 0))
-draw = ImageDraw.Draw(img)
+def create_icon():
+    # 创建 64x64 的图标
+    img = Image.new('RGBA', (64, 64), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(img)
+    
+    # 绘制简单的图标设计
+    draw.rectangle([8, 8, 56, 56], outline=(0, 120, 212), width=2)
+    draw.rectangle([16, 16, 48, 48], fill=(0, 120, 212))
+    
+    # 保存为 ICO 文件
+    img.save('src/assets/icon.ico', format='ICO')
 
-# 绘制一个简单的图标
-margin = size // 8
-draw.rectangle(
-    [margin, margin, size-margin, size-margin],
-    fill=(52, 53, 65, 255),
-    outline=(82, 83, 95, 255),
-    width=4
-)
-
-# 绘制一个文档符号
-doc_margin = size // 4
-draw.rectangle(
-    [doc_margin, doc_margin, size-doc_margin, size-doc_margin],
-    fill=(255, 255, 255, 255),
-    outline=(82, 83, 95, 255),
-    width=2
-)
-
-# 绘制文本线条
-line_margin = size // 3
-line_height = size // 16
-for i in range(3):
-    y = line_margin + i * (line_height * 2)
-    draw.line(
-        [line_margin, y, size-line_margin, y],
-        fill=(82, 83, 95, 255),
-        width=2
-    )
-
-# 保存为 ICO 文件
-img.save('icon.ico', format='ICO') 
+if __name__ == '__main__':
+    create_icon() 

@@ -2,10 +2,10 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import customtkinter as ctk
 from pathlib import Path
-from ocr_handler import OCRHandler
-from ai_handler import AIHandler
-from file_handler import FileHandler
-from config import Config
+from src.ocr_handler import OCRHandler
+from src.ai_handler import AIHandler
+from src.file_handler import FileHandler
+from src.config import Config
 import threading
 import logging
 import logging.handlers
@@ -327,6 +327,7 @@ class ScreenshotRenamer(ctk.CTk):
 
 def main():
     try:
+        setup_logging()  # 确保在启动前初始化日志
         app = ScreenshotRenamer()
         app.mainloop()
     except Exception as e:
